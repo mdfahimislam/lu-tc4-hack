@@ -56,9 +56,6 @@ private ProductModel productModel;
 // start the selector
         startActivityForResult(intent, REQUEST_CODE);
 
-
-
-
     }
 
     public void setDate(View view) {
