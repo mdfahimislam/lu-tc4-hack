@@ -12,6 +12,7 @@ import com.sib.fascommerce.Authentication.Login;
 import com.sib.fascommerce.Authentication.Registration;
 import com.sib.fascommerce.Common.SessionManager;
 import com.sib.fascommerce.Customer.User_Section1;
+import com.sib.fascommerce.First.LoginActivity;
 import com.sib.fascommerce.Seller.SellerHome;
 
 import java.util.HashMap;
@@ -44,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 {
                     startActivity(new Intent(MainActivity.this, SellerHome.class));
                 }
-                else
+                else if(wh.contains("mi"))
                 {
                     startActivity(new Intent(MainActivity.this, AdminHomePage.class));
                 }
+                else
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
     }
