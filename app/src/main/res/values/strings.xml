@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">FAS Commerce</string>
+
+    <string-array name="user_registration">
+        <item>Seller
+        </item>
+        <item>Costomer</item>
+    </string-array>
     <string-array name="TypeM">
         <item>Liquid</item>
         <item>Tablets</item>

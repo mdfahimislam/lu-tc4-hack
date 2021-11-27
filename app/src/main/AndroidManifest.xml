@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.sib.fascommerce">
 
     <application
@@ -27,9 +28,18 @@
         <activity
             android:name=".Customer.Show_Product"
             android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".Customer.UserSection"-->
+<!--            android:exported="true"-->
+<!--            tools:ignore="MissingClass" />-->
+
         <activity
-            android:name=".Customer.UserSection"
-            android:exported="true" />
+            android:name=".Admin.AdminHomePage"
+            android:exported="false" />
+
+        <activity
+            android:name=".Admin.AdminStatistic"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
