@@ -7,6 +7,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
@@ -173,18 +174,21 @@ private String[] options = {"automatic","manual"};
             Toast.makeText(this, "Any field cannot be empty", Toast.LENGTH_SHORT).show();
         }
         else
-        {
+        {   ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
+            Log.d("TAG",pd.getCategory());
+            Toast.makeText(getApplicationContext(),pd.getDes(),Toast.LENGTH_LONG).show();
+            FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
+
+
+
             for(int i = 0; i < mResults.size() ;i++)
             {
                Uri uri = Uri.fromFile(new File(mResults.get(i)));
                storageReference.child(productID+i).putFile(uri);
             }
 
-            ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
-            FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
-            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
-            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
-
-        }
+          }
     }
 }
