@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Ongoing"
+        android:icon="@drawable/ic_baseline_loop_24"
+        android:id="@+id/onGoingMenu"/>
+    <item android:title="Sold"
+        android:icon="@drawable/ic_baseline_done_all_24"
+        android:id="@+id/soldMenu"/>
+    <item android:title="Expired"
+        android:id="@+id/ExpiredMenu"/>
+</menu>

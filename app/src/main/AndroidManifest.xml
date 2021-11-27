@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FASCommerce">
         <activity
+            android:name=".Seller.ProductListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Seller.AddNewActivity"
+            android:exported="false" />
+        <activity
             android:name=".First.OtpActivity"
             android:exported="false" />
         <activity
