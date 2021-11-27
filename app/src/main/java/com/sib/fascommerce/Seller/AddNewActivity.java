@@ -70,7 +70,7 @@ private String[] options = {"automatic","manual"};
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Fresco.initialize(getApplicationContext());
         productID= FirebaseAuth.getInstance().getUid()+buy;
-        FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addValueEventListener(new ValueEventListener() {
+      /*  FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 buy=snapshot.getValue().toString();
@@ -90,7 +90,8 @@ private String[] options = {"automatic","manual"};
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });
+        });*/
+        Toast.makeText(getApplicationContext(),uid,Toast.LENGTH_LONG).show();
         storageReference = FirebaseStorage.getInstance().getReference(productID);
 
         ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this,R.array.What,R.layout.support_simple_spinner_dropdown_item);
