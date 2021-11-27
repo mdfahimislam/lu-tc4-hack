@@ -79,6 +79,7 @@
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/categoryAN"
                     android:layout_width="match_parent"
+                    android:enabled="false"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,6 +124,7 @@
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/optionAN"
+                    android:enabled="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -134,12 +136,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="10dp"
                 android:hint="Auction Expiry date"
-                android:onClick="setDate"
                 app:endIconDrawable="@drawable/ic_baseline_calendar_today_24">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
                     android:id="@+id/dateAN"
                     android:layout_width="match_parent"
+                    android:enabled="false"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 

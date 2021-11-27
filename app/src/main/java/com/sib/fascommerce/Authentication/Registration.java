@@ -119,7 +119,7 @@ public class Registration extends AppCompatActivity {
 
                 FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(UID).updateChildren(hm);
                 SessionManager sh3 = new SessionManager(getApplicationContext(), SessionManager.USERSESSION);
-                sh3.loginSession(fname.getText().toString(),em,phone,"NotGiven","0",token,UID, wh);
+                sh3.loginSession(fname.getText().toString(),em,phone,"NotGiven","0",token,UID, wh,"0");
 
             }
         });

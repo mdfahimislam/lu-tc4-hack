@@ -4,19 +4,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.sib.fascommerce.Authentication.Registration;
+import com.sib.fascommerce.Common.SessionManager;
 import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 import com.sib.fascommerce.databinding.ActivityAddNewBinding;
 import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class AddNewActivity extends AppCompatActivity {
 private ActivityAddNewBinding binding;
@@ -26,6 +35,11 @@ private DatePickerDialog datePicker;
 private int y,m,d;
 private ArrayList<String> mResults = new ArrayList<>();
 private ProductModel productModel;
+private StorageReference storageReference;
+private String productID ;
+private String[] options = {"automatic","manual"};
+    HashMap<String, String> hm1;
+    String buy="";
 
 
     @Override
@@ -34,10 +48,21 @@ private ProductModel productModel;
         binding=ActivityAddNewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.materialToolbarAN);
+        SessionManager sh = new SessionManager(AddNewActivity.this, SessionManager.USERSESSION);
+        hm1 = sh.returnData();
+        buy=hm1.get(SessionManager.BUY);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Fresco.initialize(getApplicationContext());
+        productID= FirebaseAuth.getInstance().getUid()+buy;
+        storageReference = FirebaseStorage.getInstance().getReference(productID);
 
-
+        ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this,R.array.What,R.layout.support_simple_spinner_dropdown_item);
+        binding.categoryAN.setAdapter(arrayAdapter);
+        ArrayAdapter arrayAdapter1=new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,options);
+        binding.optionAN.setAdapter(arrayAdapter1);
+        binding.dateLayoutAN.setEndIconOnClickListener(v -> {
+         setDate();
+        });
     }
 
     public void takePhotos(View view) {
@@ -58,7 +83,7 @@ private ProductModel productModel;
 
     }
 
-    public void setDate(View view) {
+    public void setDate() {
         c= Calendar.getInstance();
         y=c.get(Calendar.YEAR);
         m=c.get(Calendar.MONTH);
@@ -104,6 +129,12 @@ private ProductModel productModel;
         }
         else
         {
+            for(int i = 0; i < mResults.size() ;i++)
+            {
+                Toast.makeText(this,mResults.get(i),Toast.LENGTH_SHORT).show();
+               Uri uri = Uri.fromFile(new File(mResults.get(i)));
+               storageReference.child(productID+i).putFile(uri);
+            }
 
         }
     }

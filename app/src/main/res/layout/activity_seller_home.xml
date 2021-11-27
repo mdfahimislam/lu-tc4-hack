@@ -57,7 +57,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintTop_toTopOf="@+id/textView"
-            app:srcCompat="@drawable/cart" />
+            app:srcCompat="@drawable/cart"
+            android:onClick="goToProducts"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"

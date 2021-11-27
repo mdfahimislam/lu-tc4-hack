@@ -23,4 +23,8 @@ public class SellerHome extends AppCompatActivity {
     public void goToAddNew(View view) {
         startActivity(new Intent(this,AddNewActivity.class));
     }
+
+    public void goToProducts(View view) {
+        startActivity(new Intent(this,ProductListActivity.class));
+    }
 }

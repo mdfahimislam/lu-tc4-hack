@@ -25,6 +25,7 @@ public class SessionManager {
     public static final String POINTS = "POINTS";
     public static final String UID = "UID";
     public static final String WHAT = "WHAT";
+    public static final String BUY = "0";
 
 
 
@@ -41,7 +42,7 @@ public class SessionManager {
 
 
 
-    public void loginSession(String fullname, String email, String phone,String url,String points, String token,String uid, String what) {
+    public void loginSession(String fullname, String email, String phone,String url,String points, String token,String uid, String what,String buy) {
 
         ed.putBoolean(ISLOGGED, true);
         ed.putString(FULLNAME, fullname);
@@ -51,6 +52,7 @@ public class SessionManager {
         ed.putString(TOKEN, token);
         ed.putString(WHAT, what);
         ed.putString(POINTS, POINTS);
+        ed.putString(BUY, BUY);
         ed.commit();
     }
 
@@ -64,6 +66,7 @@ public class SessionManager {
         hm.put(POINTS, sh.getString(POINTS, null));
         hm.put(UID, sh.getString(UID, null));
         hm.put(WHAT, sh.getString(WHAT, null));
+        hm.put(BUY, sh.getString(BUY, null));
 
         return hm;
     }
