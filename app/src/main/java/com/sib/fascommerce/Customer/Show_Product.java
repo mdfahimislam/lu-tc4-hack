@@ -58,7 +58,7 @@ public class Show_Product extends AppCompatActivity {
     List<ProductModel> list=new ArrayList<>();
     List<BidModel> list1=new ArrayList<>();
 
-    int[] images={R.drawable.afganistan, R.drawable.ba};
+  //ArrayList<String> images={"R.drawable.afganistan", "R.drawable.ba"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,12 +91,12 @@ public class Show_Product extends AppCompatActivity {
         bprofile=(CircleImageView) findViewById(R.id.bprofile);
         grid=(RecyclerView) findViewById(R.id.grid);
         bids=(RecyclerView) findViewById(R.id.bids);
-        SliderAdapter sliderAdapter = new SliderAdapter(images);
+        /*SliderAdapter sliderAdapter = new SliderAdapter(Show_Product.this,images);
 
         sliderView.setSliderAdapter(sliderAdapter);
         sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
         sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
-        sliderView.startAutoCycle();
+        sliderView.startAutoCycle();*/
         grid.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 
         agr=new ProAdapter(Show_Product.this,list,"Us");

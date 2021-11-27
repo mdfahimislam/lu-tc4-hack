@@ -76,6 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Base Price: "
+                    android:textSize="16sp"
                     android:textColor="#000"></TextView>
 
                 <TextView
@@ -83,6 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Condition: "
+                    android:textSize="16sp"
                     android:textColor="#000"></TextView>
 
                 <TextView
@@ -90,6 +92,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Category: "
+                    android:textSize="16sp"
                     android:textColor="#000"></TextView>
 
 

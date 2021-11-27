@@ -21,9 +21,12 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.sib.fascommerce.Authentication.Registration;
 import com.sib.fascommerce.Common.SessionManager;
+import com.sib.fascommerce.Customer.SliderAdapter;
 import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 import com.sib.fascommerce.databinding.ActivityAddNewBinding;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
 import com.zfdang.multiple_images_selector.ImagesSelectorActivity;
 import com.zfdang.multiple_images_selector.SelectorSettings;
 
@@ -137,16 +140,24 @@ private String[] options = {"automatic","manual"};
             if(resultCode == RESULT_OK) {
                 mResults = data.getStringArrayListExtra(SelectorSettings.SELECTOR_RESULTS);
                 assert mResults != null;
+                SliderAdapter sliderAdapter = new SliderAdapter(AddNewActivity.this,mResults);
 
+                binding.imgAN.setSliderAdapter(sliderAdapter);
+                binding.imgAN.setIndicatorAnimation(IndicatorAnimationType.WORM);
+                binding.imgAN.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+                binding.imgAN.startAutoCycle();
                 // show results in textview
                 StringBuffer sb = new StringBuffer();
                 sb.append(String.format("Totally %d images selected:", mResults.size())).append("\n");
                 for(String result : mResults) {
                     sb.append(result).append("\n");
+
                 }
             }
         }
         super.onActivityResult(requestCode, resultCode, data);
+        binding.imgAN.setVisibility(View.VISIBLE);
+        binding.takephotoAN.setVisibility(View.GONE);
     }
 
     public void addNew(View view) {
