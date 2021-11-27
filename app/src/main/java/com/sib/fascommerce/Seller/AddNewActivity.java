@@ -1,5 +1,6 @@
 package com.sib.fascommerce.Seller;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -12,6 +13,10 @@ import android.widget.Toast;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.sib.fascommerce.Authentication.Registration;
@@ -39,7 +44,7 @@ private StorageReference storageReference;
 private String productID ;
 private String[] options = {"automatic","manual"};
     HashMap<String, String> hm1;
-    String buy="";
+    String buy="",email,token,phone,fname,wh,points,uid,url;
 
 
     @Override
@@ -51,9 +56,38 @@ private String[] options = {"automatic","manual"};
         SessionManager sh = new SessionManager(AddNewActivity.this, SessionManager.USERSESSION);
         hm1 = sh.returnData();
         buy=hm1.get(SessionManager.BUY);
+        url=hm1.get(SessionManager.URL);
+        fname=hm1.get(SessionManager.FULLNAME);
+        uid=hm1.get(SessionManager.UID);
+        points=hm1.get(SessionManager.POINTS);
+        email=hm1.get(SessionManager.EMAIL);
+        wh=hm1.get(SessionManager.WHAT);
+        token=hm1.get(SessionManager.TOKEN);
+        phone=hm1.get(SessionManager.PHONE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Fresco.initialize(getApplicationContext());
         productID= FirebaseAuth.getInstance().getUid()+buy;
+        FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                buy=snapshot.getValue().toString();
+                int b=Integer.parseInt(buy);
+                b++;
+
+                SessionManager shy=new SessionManager(AddNewActivity.this,SessionManager.USERSESSION);
+                shy.loginSession(fname,email,phone,url,points,token,uid,wh,b+"");
+                HashMap mp=new HashMap();
+
+                mp.put("Buy",b+"");
+
+                FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").updateChildren(mp);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         storageReference = FirebaseStorage.getInstance().getReference(productID);
 
         ArrayAdapter arrayAdapter = ArrayAdapter.createFromResource(this,R.array.What,R.layout.support_simple_spinner_dropdown_item);
@@ -134,6 +168,11 @@ private String[] options = {"automatic","manual"};
                Uri uri = Uri.fromFile(new File(mResults.get(i)));
                storageReference.child(productID+i).putFile(uri);
             }
+
+            ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
+            FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
 
         }
     }

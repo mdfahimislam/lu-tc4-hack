@@ -36,8 +36,6 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-
             android:layout_marginTop="10dp"
             android:hint="Enter First Name"
             android:textColorHint="#000"
@@ -55,8 +53,8 @@
                 android:id="@+id/fname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="#000"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:textColor="#000" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -64,12 +62,11 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-
             android:layout_marginTop="10dp"
             android:hint="Enter Last Name"
             android:textColorHint="#000"
             app:boxStrokeColor="#000"
+
             app:startIconDrawable="@drawable/create"
             app:boxStrokeWidthFocused="2dp"
             app:endIconMode="clear_text"
@@ -94,8 +91,6 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-
             android:layout_marginTop="10dp"
             android:hint="Enter Email(Optional)"
             android:textColorHint="#000"
