@@ -174,12 +174,8 @@ private String[] options = {"automatic","manual"};
             Toast.makeText(this, "Any field cannot be empty", Toast.LENGTH_SHORT).show();
         }
         else
-        {   ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
-            Log.d("TAG",pd.getCategory());
-            Toast.makeText(getApplicationContext(),pd.getDes(),Toast.LENGTH_LONG).show();
-            FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
-            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
-            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
+        {
+
 
 
 
@@ -188,6 +184,12 @@ private String[] options = {"automatic","manual"};
                Uri uri = Uri.fromFile(new File(mResults.get(i)));
                storageReference.child(productID+i).putFile(uri);
             }
+            ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
+            Log.d("TAG",pd.getCategory());
+            Toast.makeText(getApplicationContext(),pd.getDes(),Toast.LENGTH_LONG).show();
+            FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
 
           }
     }
