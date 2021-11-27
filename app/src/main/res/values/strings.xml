@@ -22,8 +22,7 @@
         <item>Sports</item>
         <item>Vehicles</item>
         <item>Property</item>
-        <item>Mental</item>
-        <item>Phycology</item>
+        <item>Medicines</item>
         <item>Others</item>
     </string-array>
 </resources>
