@@ -17,6 +17,8 @@
         <item>Injections</item>
         <item>Others</item>
     </string-array>
+
+
     <string-array name="What">
         <item>Accessories</item>
         <item>Education</item>
@@ -31,6 +33,8 @@
         <item>Medicines</item>
         <item>Others</item>
     </string-array>
+
+
 
     <string-array name="districts">
         <item>Barguna</item>

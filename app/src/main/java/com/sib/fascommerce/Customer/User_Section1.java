@@ -59,8 +59,8 @@ public class User_Section1 extends AppCompatActivity {
     ProAdapter m;
     BottomNavigationView bm;
     String email, email1 = "",url,name;
-    int img[] = {R.drawable.covid19, R.drawable.women, R.drawable.device, R.drawable.homeo, R.drawable.nut, R.drawable.vita, R.drawable.he
-            , R.drawable.can, R.drawable.dia, R.drawable.pne, R.drawable.ment, R.drawable.ment, R.drawable.oth};
+    int img[] = {R.drawable.accessories, R.drawable.education_type, R.drawable.furnitures, R.drawable.cosmetics, R.drawable.fashion, R.drawable.laptops, R.drawable.mobiles
+            , R.drawable.running, R.drawable.sedan, R.drawable.pne, R.drawable.property, R.drawable.drugs, R.drawable.other};
 
     TipAdapter ta;
 

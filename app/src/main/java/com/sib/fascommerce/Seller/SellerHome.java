@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.sib.fascommerce.Admin.AdminHomePage;
+import com.sib.fascommerce.Admin.SellerRequest;
 import com.sib.fascommerce.Fragments.onGoingFragments;
 import com.sib.fascommerce.R;
 
@@ -17,6 +19,8 @@ public class SellerHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seller_home);
+
+        startActivity(new Intent(SellerHome.this, AdminHomePage.class));
 
     }
 
