@@ -13,6 +13,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.sib.fascommerce.Common.SessionManager;
+import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 
 
@@ -30,8 +31,8 @@ public class TrShow extends AppCompatActivity {
     RecyclerView gr;
     String email,email1="",url,name;
     ProAdapter agr;
-    List<Pro> list=new ArrayList<>();
-    List<Pro> list1=new ArrayList<>();
+    List<ProductModel> list=new ArrayList<>();
+    List<ProductModel> list1=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,10 +64,10 @@ public class TrShow extends AppCompatActivity {
                 list1.clear();
                 for(DataSnapshot s:snapshot.getChildren())
                 {
-                    Pro de=s.getValue(Pro.class);
+                    ProductModel de=s.getValue(ProductModel.class);
                     re1=re1.toLowerCase();
 
-                    String n=de.getDisease().toLowerCase();
+                    String n=de.getCategory().toLowerCase();
                 //    Toast.makeText(getApplicationContext(),n+" "+re1,Toast.LENGTH_LONG).show();
                     if(n.contains(re1)||n.equals(re1)||re1.contains(n)) {
                         list1.add(de);
@@ -94,7 +95,7 @@ public class TrShow extends AppCompatActivity {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot s : snapshot.getChildren()) {
-                        Pro de = s.getValue(Pro.class);
+                        ProductModel de = s.getValue(ProductModel.class);
                         list.add(de);
                     }
                     agr.notifyDataSetChanged();
