@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sib.fascommerce">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +12,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FASCommerce">
+        <activity
+            android:name=".Admin.AdminStatistic"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminHomePage"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.VerificationOTP"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.UploadingNIDinfo"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Registration"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Login"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.Join"
+            android:exported="false" />
+        <activity
+            android:name=".Authentication.StartPage"
+            android:exported="false" />
         <activity
             android:name=".First.OtpActivity"
             android:exported="false" />
