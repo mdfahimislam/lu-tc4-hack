@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "39055984072",
+    "project_id": "fas-commerce",
+    "storage_bucket": "fas-commerce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39055984072:android:82e204eb9dde5036926cfd",
+        "android_client_info": {
+          "package_name": "com.sib.fascommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39055984072-3tl864t9opiq9lnvbe2sh6vs794n93t8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnRFvp7TF7PggLZ4HzGdpss9fAln633Zg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39055984072-3tl864t9opiq9lnvbe2sh6vs794n93t8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
