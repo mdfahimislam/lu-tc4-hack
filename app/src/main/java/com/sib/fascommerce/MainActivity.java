@@ -36,21 +36,19 @@ public class MainActivity extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(wh.contains("to"))
-                {
-                    startActivity(new Intent(MainActivity.this, User_Section1.class));
+                if (wh != null) {
+                    if (wh.contains("to")) {
+                        startActivity(new Intent(MainActivity.this, User_Section1.class));
 
-                }
-                else if(wh.contains("ll"))
-                {
-                    startActivity(new Intent(MainActivity.this, SellerHome.class));
-                }
-                else if(wh.contains("mi"))
-                {
-                    startActivity(new Intent(MainActivity.this, AdminHomePage.class));
-                }
-                else
+                    } else if (wh.contains("ll")) {
+                        startActivity(new Intent(MainActivity.this, SellerHome.class));
+                    } else if (wh.contains("mi")) {
+                        startActivity(new Intent(MainActivity.this, AdminHomePage.class));
+                    } else
+                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                } else {
                     startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                }
             }
         });
     }
