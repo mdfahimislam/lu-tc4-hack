@@ -8,7 +8,7 @@
     tools:context=".Seller.AddNewActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/materialToolbar"
+        android:id="@+id/materialToolbarAN"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Blood"
@@ -24,7 +24,7 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialToolbar"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbarAN"
         app:layout_constraintBottom_toTopOf="@id/add">
 
         <LinearLayout
@@ -41,10 +41,18 @@
                 android:onClick="takePhotos">
 
                 <TextView
+                    android:id="@+id/takephotoAN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawableStart="@drawable/ic_baseline_add_a_photo_24"
-                    android:text="Add Photos" />
+                    android:text="Add Photos"
+                    android:onClick="takePhotos"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/imgAN"/>
+
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -55,11 +63,13 @@
                 android:hint="Title">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleAN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/categoryLayoutAN"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,11 +77,13 @@
                 android:hint="Category">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/categoryAN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/descriptionLayoutAN"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,6 +91,7 @@
                 android:hint="Description">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionAN"
                     android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:gravity="top"
@@ -87,6 +100,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/priceLayoutAN"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -94,11 +108,13 @@
                 android:hint="Base Price">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/priceAN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/optionLayoutAN"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -106,11 +122,13 @@
                 android:hint="Winning bid selection">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/optionAN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateLayoutAN"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,6 +138,7 @@
                 app:endIconDrawable="@drawable/ic_baseline_calendar_today_24">
 
                 <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                    android:id="@+id/dateAN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -133,6 +152,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@id/add"
         android:text="add"
+        android:onClick="addNew"
         android:layout_marginBottom="-8dp"/>
 
 

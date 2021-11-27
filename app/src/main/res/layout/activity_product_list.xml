@@ -7,24 +7,35 @@
     tools:context=".Seller.ProductListActivity">
 
     <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Blood"
         android:backgroundTint="@color/Blood"
-        app:navigationIcon="@drawable/back_arraw_white"
-        app:title="My Products"
-        app:titleTextColor="@color/White"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/back_arraw_white"
+        app:title="My Products"
+        app:titleTextColor="@color/White" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Blood"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/seller_menu"
         app:itemIconTint="@color/White"
-        app:itemTextColor="@color/white"/>
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/seller_menu" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

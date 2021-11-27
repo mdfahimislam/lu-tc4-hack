@@ -3,20 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/FASCommerce/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_add_new.xml" value="0.13020833333333334" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_med_adapter.xml" value="0.13072916666666667" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_product_list.xml" value="0.13020833333333334" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_show_product.xml" value="0.264" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_show_results.xml" value="0.13020833333333334" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_take_address.xml" value="0.25416666666666665" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_tr_show.xml" value="0.25416666666666665" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/activity_user_section.xml" value="0.21116399826914756" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/bid.xml" value="0.13229166666666667" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/education.xml" value="0.25416666666666665" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/imageslider.xml" value="0.25416666666666665" />
-        <entry key="..\:/FASCommerce/app/src/main/res/layout/tip.xml" value="0.13020833333333334" />
-        <entry key="..\:/FASCommerce/app/src/main/res/menu/user.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/cart.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/drawable/ic_baseline_notifications_active_24.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/drawable/photoinput.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/activity_add_new.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_product_list.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_seller_home.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18854166666666666" />
+        <entry key="app/src/main/res/layout/activity_user_section.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_expired.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_on_going_fragments.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_sold_fragments.xml" value="0.13802083333333334" />
+        <entry key="app/src/main/res/menu/seller_menu.xml" value="0.20364583333333333" />
       </map>
     </option>
   </component>

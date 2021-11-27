@@ -9,5 +9,6 @@
         android:icon="@drawable/ic_baseline_done_all_24"
         android:id="@+id/soldMenu"/>
     <item android:title="Expired"
-        android:id="@+id/ExpiredMenu"/>
+        android:icon="@drawable/ic_baseline_do_not_disturb_24"
+        android:id="@+id/expiredMenu"/>
 </menu>
