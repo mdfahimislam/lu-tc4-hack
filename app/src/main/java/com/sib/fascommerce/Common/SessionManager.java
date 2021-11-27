@@ -51,8 +51,9 @@ public class SessionManager {
         ed.putString(URL, url);
         ed.putString(TOKEN, token);
         ed.putString(WHAT, what);
-        ed.putString(POINTS, POINTS);
-        ed.putString(BUY, BUY);
+        ed.putString(POINTS, points);
+        ed.putString(BUY, buy);
+        ed.putString(UID, uid);
         ed.commit();
     }
 

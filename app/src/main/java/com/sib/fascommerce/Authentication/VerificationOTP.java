@@ -67,10 +67,10 @@ public class VerificationOTP extends AppCompatActivity {
 
         accountType = getIntent().getExtras().getInt("ACCOUNT_TYPE");
         phoneNumber = getIntent().getExtras().getString("PHONE_NUMBER");
-          phoneNumber1="+88"+phoneNumber;
-        Log.d("TAG",phoneNumber);
+        phoneNumber1 = "+88" + phoneNumber;
+        Log.d("TAG", phoneNumber);
 
-        smsNumber.setText("You will get an OPT via SMS \n"+phoneNumber1);
+        smsNumber.setText("You will get an OPT via SMS \n" + phoneNumber1);
 
         sendVerificationCode(phoneNumber1);
 
@@ -113,41 +113,37 @@ public class VerificationOTP extends AppCompatActivity {
                             FirebaseInstanceId.getInstance().getInstanceId()
                                     .addOnCompleteListener(task4 -> {
                                         if (task4.isSuccessful()) {
-                                            String wh="";
-                                            if(accountType==0)
-                                                wh="Customer";
-                                            else if(accountType==1)
-                                                wh="Seller";
+                                            String wh = "";
+                                            if (accountType == 0)
+                                                wh = "Customer";
+                                            else if (accountType == 1)
+                                                wh = "Seller";
                                             else
-                                                wh="Admin";
-                                            String uid=mAuth.getUid();
+                                                wh = "Admin";
+                                            String uid = mAuth.getUid();
                                             String token = Objects.requireNonNull(task4.getResult()).getToken();
-                                            SessionManager sh=new SessionManager(VerificationOTP.this,SessionManager.USERSESSION);
-sh.loginSession("NO","No",phoneNumber1,"No","0",token,uid, wh,"0");
-HashMap hm5=new HashMap();
-hm5.put("Phone",phoneNumber1);
-hm5.put("What",wh);
-hm5.put("Token",token);
-hm5.put("Points","0");
+                                            SessionManager sh = new SessionManager(VerificationOTP.this, SessionManager.USERSESSION);
+                                            sh.loginSession("NO", "No", phoneNumber1, "No", "0", token, uid, wh, "0");
+                                            HashMap hm5 = new HashMap();
+                                            hm5.put("Phone", phoneNumber1);
+                                            hm5.put("What", wh);
+                                            hm5.put("Uid", uid);
+                                            hm5.put("Token", token);
+                                            hm5.put("Points", "0");
+                                            hm5.put("Buy", "0");
                                             FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).setValue(hm5);
 
 
-                                           if(wh.contains("to"))
-                                            {
+                                            if (wh.contains("to")) {
                                                 startActivity(new Intent(VerificationOTP.this, User_Section1.class));
 
-                                            }
-                                            else if(wh.contains("ll"))
-                                            {
+                                            } else if (wh.contains("ll")) {
                                                 startActivity(new Intent(VerificationOTP.this, SellerHome.class));
-                                            }
-                                            else
-                                            {
+                                            } else {
                                                 startActivity(new Intent(VerificationOTP.this, AdminHomePage.class));
                                             }
-                                        }
-                                        else{
-                                            Log.d("TAG", "signUp: "+task4.getException());
+                                        } else {
+                                            Log.d("TAG", "signUp: " + task4.getException());
                                         }
                                     });
 
@@ -155,7 +151,8 @@ hm5.put("Points","0");
                             // if the code is not correct then we are
                             // displaying an error message to the user.
                             Toast.makeText(VerificationOTP.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        Log.d("TAG",task.getException().getMessage()) ;}
+                            Log.d("TAG", task.getException().getMessage());
+                        }
                     }
                 });
     }
@@ -229,7 +226,7 @@ hm5.put("Points","0");
     private void verifyCode(String code) {
         // below line is used for getting getting
         // credentials from our verification id and code.
-        if(code!=null||!code.isEmpty()) {
+        if (code != null || !code.isEmpty()) {
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
 
             // after getting credential we are

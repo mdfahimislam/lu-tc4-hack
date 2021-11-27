@@ -82,7 +82,6 @@ public class Show_Product extends AppCompatActivity {
         con.setText("New");
         price1.setText(pri);
         model.setText(cat);
-
         con=(TextView) findViewById(R.id.con);
         bidRange=(TextView) findViewById(R.id.bidRange);
         model=(TextView) findViewById(R.id.model);
