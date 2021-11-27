@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
                     } else if (wh.contains("mi")) {
                         startActivity(new Intent(MainActivity.this, AdminHomePage.class));
                     } else
-                        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                        startActivity(new Intent(MainActivity.this, Login.class));
                 } else {
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this, Login.class));
                 }
             }
         });
