@@ -131,7 +131,6 @@ private String[] options = {"automatic","manual"};
         {
             for(int i = 0; i < mResults.size() ;i++)
             {
-                Toast.makeText(this,mResults.get(i),Toast.LENGTH_SHORT).show();
                Uri uri = Uri.fromFile(new File(mResults.get(i)));
                storageReference.child(productID+i).putFile(uri);
             }
