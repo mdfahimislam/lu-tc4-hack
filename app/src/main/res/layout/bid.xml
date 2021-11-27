@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:padding="10dp"
+       android:orientation="horizontal"
+       >
+       <RelativeLayout
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1">
+       <de.hdodenhof.circleimageview.CircleImageView
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:id="@+id/profile"
+           ></de.hdodenhof.circleimageview.CircleImageView>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:id="@+id/name"
+           android:text="16sp"
+           android:textStyle="bold"></TextView>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/name"
+               android:text="+22Points"
+               android:textStyle="bold"
+               android:id="@+id/points"
+               android:textColor="#000"
+               android:layout_marginTop="5dp"></TextView>
+       </RelativeLayout>
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="Bid: 200Tk."
+           android:textStyle="bold"
+           android:textColor="#000"
+         android:id="@+id/bid"></TextView>
+   </LinearLayout>
+
+</androidx.cardview.widget.CardView>

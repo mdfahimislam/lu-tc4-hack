@@ -2,18 +2,55 @@ package com.sib.fascommerce.DataModels;
 
 public class BidModel {
     private int tk,point;
-    private String pNumber,email,name;
+    private String pNumber,email,name,url,pId,uid,hasBid;
 
     public BidModel() {
     }
 
-    public BidModel(int tk, int point, String pNumber, String email, String name) {
+    public String getHasBid() {
+        return hasBid;
+    }
+
+    public void setHasBid(String hasBid) {
+        this.hasBid = hasBid;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getpId() {
+        return pId;
+    }
+
+    public void setpId(String pId) {
+        this.pId = pId;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public BidModel(int tk, int point, String pNumber, String email, String name, String url, String uid, String pId,String hasBid) {
         this.tk = tk;
         this.point = point;
         this.pNumber = pNumber;
         this.email = email;
         this.name = name;
+        this.url = url;
+        this.uid = uid;
+        this.pId = pId;
+        this.hasBid = hasBid;
     }
+
 
     public int getTk() {
         return tk;
