@@ -1,4 +1,4 @@
-package com.sib.fascommerce.Customer;
+package com.sib.fascommerce.First;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.sib.fascommerce.R;
 
-public class UserSection extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_section);
+        setContentView(R.layout.activity_login);
     }
 }

@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FASCommerce">
         <activity
+            android:name=".First.OtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".First.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".First.SplashScreen"
+            android:exported="false" />
+        <activity
             android:name=".Customer.Show_Product"
             android:exported="true" />
         <activity

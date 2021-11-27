@@ -1,14 +1,14 @@
 package com.sib.fascommerce.DataModels;
 
 public class UserModel {
-    private String fName , lName , pNumber , email , type , token ;
+    private String uId,fName , lName , pNumber , email , type , token ;
     private int point;
     private boolean isVerified;
 
     public UserModel() {
     }
 
-    public UserModel(String fName, String lName, String pNumber, String email, String type, String token, int point, boolean isVerified) {
+    public UserModel(String fName,String uId, String lName, String pNumber, String email, String type, String token, int point, boolean isVerified) {
         this.fName = fName;
         this.lName = lName;
         this.pNumber = pNumber;
@@ -17,10 +17,19 @@ public class UserModel {
         this.token = token;
         this.point = point;
         this.isVerified = isVerified;
+        this.uId=uId;
     }
 
     public String getfName() {
         return fName;
+    }
+
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
     }
 
     public void setfName(String fName) {
