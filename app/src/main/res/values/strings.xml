@@ -25,25 +25,82 @@
         <item>Medicines</item>
         <item>Others</item>
     </string-array>
-    <string name="title_activity_registration">Registration</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 
-    <string-array name="user_type">
-        <item>Costomer</item>
-        <item>Seller</item>
+    <string-array name="districts">
+        <item>Barguna</item>
+        <item>Barisal</item>
+        <item>Bhola</item>
+        <item>Jhalokati</item>
+        <item>Patuakhali</item>
+        <item>Pirojpur</item>
+        <item>Bandarban</item>
+        <item>Brahmanbaria</item>
+        <item>Chandpur</item>
+        <item>Chittagong</item>
+        <item>Comilla</item>
+        <item>Cox Bazar</item>
+        <item>Feni</item>
+        <item>Khagrachari</item>
+        <item>Lakshmipur</item>
+        <item>Noakhali</item>
+        <item>Rangamati</item>
+        <item>Dhaka</item>
+        <item>Faridpur</item>
+        <item>Gazipur</item>
+        <item>Gopalganj</item>
+        <item>Kishoreganj</item>
+        <item>Madaripur</item>
+        <item>Manikganj</item>
+        <item>Munshiganj</item>
+        <item>Narayanganj</item>
+        <item>Narsingdi</item>
+        <item>Rajbari</item>
+        <item>Shariatpur</item>
+        <item>Tangail</item>
+        <item>Jamalpur</item>
+        <item>Mymensingh</item>
+        <item>Netrakona</item>
+        <item>Sherpur</item>
+        <item>Bagerhat</item>
+        <item>Chuadanga</item>
+        <item>Jessore</item>
+        <item>Jhenaidah</item>
+        <item>Khulna</item>
+        <item>Kushtia</item>
+        <item>Magura</item>
+        <item>Meherpur</item>
+        <item>Narail</item>
+        <item>Shatkhira</item>
+        <item>Bogra</item>
+        <item>Jaipurhat</item>
+        <item>Naogaon</item>
+        <item>Natore</item>
+        <item>Nawabganj</item>
+        <item>Pabna</item>
+        <item>Rajshahi</item>
+        <item>Sirajganj</item>
+        <item>Rangpur</item>
+        <item>Gaibandha</item>
+        <item>Kurigram</item>
+        <item>Nilphamari</item>
+        <item>Lalmonirhat</item>
+        <item>Dinajpur</item>
+        <item>Thakurgaon</item>
+        <item>Panchagarh</item>
+        <item>Habiganj</item>
+        <item>Maulvibazar</item>
+        <item>Sunamganj</item>
+        <item>Sylhet</item>
+        <item>All</item>
     </string-array>
-
-
-    <string-array name="user_registration">
-        <item>Costomer</item>
-        <item>Seller</item>
+    <string-array name="divisions">
+        <item>Sylhet</item>
+        <item>Dhaka</item>
+        <item>Mymensingh</item>
+        <item>Khulna</item>
+        <item>Chittagong</item>
+        <item>Rajshahi</item>
+        <item>Rangpur</item>
+        <item>Barishal</item>
     </string-array>
-
 </resources>

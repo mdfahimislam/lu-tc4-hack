@@ -19,70 +19,49 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/image_slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="2"
+                app:sliderStartAutoCycle="true" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
 
-                <ImageView
-                    android:id="@+id/mpic"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_alignParentLeft="true"
-                    android:scaleType="fitXY"
-
-                    android:src="@drawable/k95mask" />
-
-                <ImageView
-                    android:id="@+id/back"
+                <TextView
+                    android:id="@+id/mname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:background="#fff"
-                    android:src="@drawable/arrowb" />
+                    android:layout_marginRight="5dp"
+                    android:textColor="#000"
+                    android:textSize="18dp"
+                    android:textStyle="bold"></TextView>
 
-
-                <RelativeLayout
-                    android:id="@+id/ert"
+                <TextView
+                    android:id="@+id/rtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#fff"
-                    android:paddingTop="5dp">
-
-                    <ImageView
-                        android:id="@+id/cart"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/cart"></ImageView>
-
-                    <TextView
-                        android:id="@+id/count"
-                        android:layout_width="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_alignRight="@+id/cart"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="-10dp"
-                        android:text="0"
-                        android:textColor="@color/Blood"
-                        android:textSize="16sp"
-                        android:textStyle="bold"></TextView>
-                </RelativeLayout>
-
+                    android:layout_alignParentRight="true"
+                    android:text="20:30:10 Remaining"
+                    android:textColor="@color/Blood"
+                    android:textSize="14sp"></TextView>
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/mname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
-                android:textColor="#000"
-                android:textSize="18dp"
-                android:textStyle="bold"></TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -90,94 +69,32 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/bname"
-                    android:layout_width="0dp"
+                    android:id="@+id/bidRange"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_weight="4"
-                    android:text="Abid Pharmacy"
+                    android:text="Base Price: "
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/con"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Condition: "
+                    android:textColor="#000"></TextView>
+
+                <TextView
+                    android:id="@+id/model"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Category: "
                     android:textColor="#000"></TextView>
 
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/text"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/price"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text=""
-                    android:textColor="#000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"></TextView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="4"
-                        android:orientation="horizontal">
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/dec"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@color/grey"
-                            android:text="-"
-                            android:textSize="14sp"
-                            android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
-
-                        <TextView
-                            android:id="@+id/pr"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:padding="10dp"
-                            android:text="1"
-                            android:textSize="16sp"
-                            android:textStyle="bold"></TextView>
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/inc"
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:background="@color/grey"
-                            android:text="+"
-                            android:textSize="14sp"
-                            android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
-
-                    </LinearLayout>
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/buy"
-                        android:layout_width="0dp"
-                        android:layout_height="48dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="2"
-                        android:background="@drawable/button"
-                        android:padding="10dp"
-                        android:text="Buy"
-                        android:textColor="#fff"
-                        android:textSize="16sp"
-                        android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
-                </LinearLayout>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -204,9 +121,26 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="20dp"
                     android:textColor="#000"
-                    android:textSize="16dp"
-                    ></TextView>
+                    android:textSize="16dp"></TextView>
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/grey"
+                android:padding="5dp"
+                android:text="Bids in this product"
+                android:textColor="#000"
+                android:textSize="18dp"
+                android:textStyle="bold"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bids"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"></androidx.recyclerview.widget.RecyclerView>
 
             <TextView
                 android:layout_width="match_parent"
@@ -225,8 +159,44 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                ></androidx.recyclerview.widget.RecyclerView>
+                android:layout_marginBottom="40dp"></androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About Buyer"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ahmed Abid"
+                    android:textColor="#000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"></TextView>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/bprofile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/covid19"></de.hdodenhof.circleimageview.CircleImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/name"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#000"></TextView>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -236,6 +206,7 @@
                 android:text="Disclaimer"
                 android:textColor="@color/Blood"
                 android:textSize="18sp"></TextView>
+
 
             <TextView
 
@@ -257,34 +228,60 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/button"
+            android:orientation="vertical"
             android:padding="10dp">
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="2"
-                android:layout_height="wrap_content"
-                android:text="0 Item   |"
-                android:textColor="#fff"
-                android:textStyle="bold"
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:text="Bid"
+                android:id="@+id/bi"
+                android:background="@drawable/button"
                 android:textSize="18sp"
-                android:id="@+id/c"></TextView>
-            <RelativeLayout
+                android:textColor="#fff"
+                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    android:id="@+id/gon">
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
                 android:layout_weight="4"
-                android:id="@+id/scart"
-                >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="View cart->"
-                    android:textColor="#fff"
-                    android:layout_alignParentEnd="true"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    ></TextView>
-            </RelativeLayout>
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+
+                android:layout_marginTop="10dp"
+                android:hint="Enter Shop Name"
+                android:textColorHint="#000"
+                app:boxStrokeColor="#000"
+                app:startIconDrawable="@drawable/create"
+                app:boxStrokeWidthFocused="2dp"
+                app:endIconMode="clear_text"
+                app:endIconTint="#000"
+                app:hintTextColor="#000"
+                app:passwordToggleEnabled="true"
+                app:startIconTint="#000"
+                android:id="@+id/na"
+                android:background="@drawable/backg"></com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/enter"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#000"
+                android:padding="10dp"/>
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:id="@+id/send"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_send_24"/>
+        </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

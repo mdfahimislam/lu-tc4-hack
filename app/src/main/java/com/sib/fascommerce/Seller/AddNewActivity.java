@@ -7,14 +7,17 @@ import android.view.View;
 
 import com.sib.fascommerce.R;
 
-public class SellerHome extends AppCompatActivity {
+public class AddNewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_seller_home);
+        setContentView(R.layout.activity_add_new);
     }
 
-    public void goToAddNew(View view) {
+    public void takePhotos(View view) {
+    }
+
+    public void setDate(View view) {
     }
 }
