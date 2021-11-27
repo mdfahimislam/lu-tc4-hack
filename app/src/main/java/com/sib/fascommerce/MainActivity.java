@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         SessionManager sh = new SessionManager(MainActivity.this, SessionManager.USERSESSION);
         hm1 = sh.returnData();
-        wh=hm1.get(SessionManager.EMAIL);
+        wh=hm1.get(SessionManager.WHAT);
 
 
         textView = findViewById(R.id.testing);
