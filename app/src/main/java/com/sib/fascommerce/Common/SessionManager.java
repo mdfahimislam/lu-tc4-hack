@@ -41,7 +41,7 @@ public class SessionManager {
 
 
 
-    public void loginSession(String fullname, String email, String phone,String url,String token,String what) {
+    public void loginSession(String fullname, String email, String phone,String url,String points, String token,String uid, String what) {
 
         ed.putBoolean(ISLOGGED, true);
         ed.putString(FULLNAME, fullname);
@@ -50,6 +50,7 @@ public class SessionManager {
         ed.putString(URL, url);
         ed.putString(TOKEN, token);
         ed.putString(WHAT, what);
+        ed.putString(POINTS, POINTS);
         ed.commit();
     }
 

@@ -1,11 +1,5 @@
 package com.sib.fascommerce.Customer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +12,12 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,12 +27,11 @@ import com.sib.fascommerce.Common.SessionManager;
 import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class User_Section extends AppCompatActivity {
+public class User_Section1 extends AppCompatActivity {
     RecyclerView rco, rwo, rde, rho, rnu, rvi, rhe, rca, rdi, rpn, rme, rot, tip,RAll;
     TextView co, wo, de, ho, nu, vi, he, ca, dia, pn, me, ot, count, All;
     RelativeLayout scart;
@@ -103,7 +102,7 @@ class User_Section extends AppCompatActivity {
         refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                startActivity(new Intent(getApplicationContext(),User_Section.class));
+                startActivity(new Intent(getApplicationContext(), User_Section1.class));
                 finish();
             }
         });
@@ -170,7 +169,7 @@ class User_Section extends AppCompatActivity {
         rca = (RecyclerView) findViewById(R.id.rca);
         rvi = (RecyclerView) findViewById(R.id.rvi);
         rdi = (RecyclerView) findViewById(R.id.rdi);
-        ta = new TipAdapter(User_Section.this, img, na);
+        ta = new TipAdapter(User_Section1.this, img, na);
         tip.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         tip.setAdapter(ta);
         FirebaseDatabase.getInstance().getReference("Users").child(email1).child("CartCount").addValueEventListener(new ValueEventListener() {
@@ -198,7 +197,7 @@ class User_Section extends AppCompatActivity {
                         list.add(me);
                     }
                     rco.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list,"Us");
+                    m = new ProAdapter(User_Section1.this, list,"Us");
                     rco.setAdapter(m);
                 } else {
                     co.setVisibility(View.GONE);
@@ -221,7 +220,7 @@ class User_Section extends AppCompatActivity {
                         list1.add(me);
                     }
                     rwo.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list1,"Us");
+                    m = new ProAdapter(User_Section1.this, list1,"Us");
                     rwo.setAdapter(m);
                 } else {
                     rwo.setVisibility(View.GONE);
@@ -244,7 +243,7 @@ class User_Section extends AppCompatActivity {
                         list2.add(me);
                     }
                     rde.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list2,"Us");
+                    m = new ProAdapter(User_Section1.this, list2,"Us");
                     rde.setAdapter(m);
                 } else {
                     rde.setVisibility(View.GONE);
@@ -267,7 +266,7 @@ class User_Section extends AppCompatActivity {
                         list3.add(me);
                     }
                     rho.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list2,"Us");
+                    m = new ProAdapter(User_Section1.this, list2,"Us");
                     rho.setAdapter(m);
                 } else {
                     ho.setVisibility(View.GONE);
@@ -290,7 +289,7 @@ class User_Section extends AppCompatActivity {
                         list4.add(me);
                     }
                     rnu.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list4,"Us");
+                    m = new ProAdapter(User_Section1.this, list4,"Us");
                     rnu.setAdapter(m);
                 } else {
                     nu.setVisibility(View.GONE);
@@ -313,7 +312,7 @@ class User_Section extends AppCompatActivity {
                         list5.add(me);
                     }
                     rvi.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list5,"Us");
+                    m = new ProAdapter(User_Section1.this, list5,"Us");
                     rvi.setAdapter(m);
                 } else {
                     vi.setVisibility(View.GONE);
@@ -336,7 +335,7 @@ class User_Section extends AppCompatActivity {
                         list6.add(me);
                     }
                     rhe.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list6,"Us");
+                    m = new ProAdapter(User_Section1.this, list6,"Us");
                     rhe.setAdapter(m);
                 } else {
                     he.setVisibility(View.GONE);
@@ -359,7 +358,7 @@ class User_Section extends AppCompatActivity {
                         list7.add(me);
                     }
                     rca.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list7,"Us");
+                    m = new ProAdapter(User_Section1.this, list7,"Us");
                     rca.setAdapter(m);
                 } else {
                     ca.setVisibility(View.GONE);
@@ -382,7 +381,7 @@ class User_Section extends AppCompatActivity {
                         list8.add(me);
                     }
                     rdi.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list8,"Us");
+                    m = new ProAdapter(User_Section1.this, list8,"Us");
                     rdi.setAdapter(m);
                 } else {
                     dia.setVisibility(View.GONE);
@@ -405,7 +404,7 @@ class User_Section extends AppCompatActivity {
                         list9.add(me);
                     }
                     rpn.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list9,"Us");
+                    m = new ProAdapter(User_Section1.this, list9,"Us");
                     rpn.setAdapter(m);
                 } else {
                     pn.setVisibility(View.GONE);
@@ -428,7 +427,7 @@ class User_Section extends AppCompatActivity {
                         list10.add(me);
                     }
                     rme.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list10,"Us");
+                    m = new ProAdapter(User_Section1.this, list10,"Us");
                     rme.setAdapter(m);
                 } else {
                     me.setVisibility(View.GONE);
@@ -451,7 +450,7 @@ class User_Section extends AppCompatActivity {
                         list11.add(me);
                     }
                     rot.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list11,"Us");
+                    m = new ProAdapter(User_Section1.this, list11,"Us");
                     rot.setAdapter(m);
                 } else {
                     ot.setVisibility(View.GONE);
@@ -481,7 +480,7 @@ class User_Section extends AppCompatActivity {
                         list15.add(me);
                     }
                     RAll.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
-                    m = new ProAdapter(User_Section.this, list15,"Us");
+                    m = new ProAdapter(User_Section1.this, list15,"Us");
                     RAll.setAdapter(m);
                 } else {
                     RAll.setVisibility(View.GONE);

@@ -67,7 +67,7 @@ List<ProductModel> list1=new ArrayList<>();
         ad=new ProAdapter(ShowResults.this,list,"Sh");
         rere.setAdapter(ad);
         re.setText("Showing results for "+re1);
-        FirebaseDatabase.getInstance().getReference("AllProicines").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProducts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot s:snapshot.getChildren())
@@ -77,11 +77,12 @@ List<ProductModel> list1=new ArrayList<>();
 
                     String n=de.getTitle().toLowerCase();
                     String n1=de.getCategory().toLowerCase();
+                    String n2=de.getDes().toLowerCase();
                 //    Toast.makeText(getApplicationContext(),n+" "+re1,Toast.LENGTH_LONG).show();
-                    if(n.contains(re1)||n.equals(re1)||re1.contains(n)||n1.contains(re1)||n1.equals(re1)||re1.contains(n1)) {
+                    if(n.contains(re1)||n.equals(re1)||re1.contains(n)||n1.contains(re1)||n1.equals(re1)||re1.contains(n1)||n2.contains(re1)||n2.equals(re1)||re1.contains(n2)) {
                         if(re3<5)
                         {
-                            ty[re3]=de.getDes();
+                            ty[re3]=de.getCategory();
                             re3++;
                         }
                         list.add(de);
@@ -94,14 +95,16 @@ List<ProductModel> list1=new ArrayList<>();
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });        gr.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+        });
+
+        gr.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 
         agr=new ProAdapter(ShowResults.this,list,"Us");
         gr.setAdapter(agr);
         for(int i=0;i<re3;i++)
         {
 
-            FirebaseDatabase.getInstance().getReference("Proicines").child(ty[i]).addValueEventListener(new ValueEventListener() {
+            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(ty[i]).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for(DataSnapshot s: snapshot.getChildren())

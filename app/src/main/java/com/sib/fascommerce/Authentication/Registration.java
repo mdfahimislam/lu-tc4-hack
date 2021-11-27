@@ -7,36 +7,44 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import com.google.firebase.database.FirebaseDatabase;
+import com.sib.fascommerce.Common.SessionManager;
 import com.sib.fascommerce.R;
+
+import java.util.HashMap;
 
 public class Registration extends AppCompatActivity {
 
     int SELECT_PICTURE = 200;
 
-    private ImageView nidFrontPage;
-    private ImageView nidBackPage;
-
+     EditText fname,lname,email;
+     Button sub;
+    String UID,phone,wh,token;
     int image = 0;
+    HashMap<String, String> hm1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
+        fname=(EditText) findViewById(R.id.fname);
+        fname=(EditText) findViewById(R.id.lname);
+        email=(EditText) findViewById(R.id.email);
+        sub=(Button) findViewById(R.id.sub);
 
-
-        Spinner spinner = (Spinner) findViewById(R.id.login_activity_user_type);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.user_registration, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-
-        // Layout
-        nidFrontPage = findViewById(R.id.activity_registration_nid_front_page);
+        SessionManager sh = new SessionManager(Registration.this, SessionManager.USERSESSION);
+        hm1 = sh.returnData();
+         UID = hm1.get(SessionManager.UID);
+         phone = hm1.get(SessionManager.PHONE);
+         wh = hm1.get(SessionManager.WHAT);
+         token = hm1.get(SessionManager.TOKEN);
+     /*   nidFrontPage = findViewById(R.id.activity_registration_nid_front_page);
         nidBackPage = findViewById(R.id.activity_registration_nid_back_page);
 
 
@@ -96,6 +104,24 @@ public class Registration extends AppCompatActivity {
                 }
             }
         }
-    }
+    }*/
 
+        sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String em="No";
+                if(!email.getText().toString().isEmpty())
+                    em=email.getText().toString();
+                HashMap hm=new HashMap();
+                hm.put("FName",fname.getText().toString());
+                hm.put("LName",lname.getText().toString());
+                hm.put("Email",em);
+
+                FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(UID).updateChildren(hm);
+                SessionManager sh3 = new SessionManager(getApplicationContext(), SessionManager.USERSESSION);
+                sh3.loginSession(fname.getText().toString(),em,phone,"NotGiven","0",token,UID, wh);
+
+            }
+        });
+    }
 }

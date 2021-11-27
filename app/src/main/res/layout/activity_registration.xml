@@ -1,130 +1,148 @@
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Authentication.Registration">
+    tools:context=".Authentication.Registration"
+    android:background="#fff"
+    android:padding="30dp">
 
-    <ScrollView
-        android:layout_marginTop="50dp"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/activity_registration_last_name"
+        <ImageView
+
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrowb"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User\nRegister"
+            android:textSize="24sp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            ></TextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="20dp">
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 
-            <Spinner
-                android:id="@+id/login_activity_user_type"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_marginTop="10dp"
+            android:hint="Enter First Name"
+            android:textColorHint="#000"
+            app:boxStrokeColor="#000"
+            app:startIconDrawable="@drawable/create"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="#000"
+            app:hintTextColor="#000"
+            app:passwordToggleEnabled="true"
+            app:startIconTint="#000"
+            android:background="@drawable/backg">
 
-            <EditText
-                android:id="@+id/activity_registration_first_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:ems="10"
-                android:hint="First Name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:ems="10"
-                android:hint="Last Name"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <EditText
-                android:id="@+id/activity_registration_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:ems="10"
-                android:hint="Phone"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <EditText
-
-                android:id="@+id/activity_registration_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:ems="10"
-                android:hint="Email"
-                android:inputType="textPersonName"
-                android:minHeight="48dp" />
-
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:orientation="horizontal">
+                android:textColor="#000"
+                android:padding="10dp"/>
 
-                <TextView
+        </com.google.android.material.textfield.TextInputLayout>
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Upload NID front Page: "
-                    android:textColor="#000000" />
+        <com.google.android.material.textfield.TextInputLayout
 
-                <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
 
-                    android:id="@+id/activity_registration_nid_front_page"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/nid_uploading_sign" />
+            android:layout_marginTop="10dp"
+            android:hint="Enter Last Name"
+            android:textColorHint="#000"
+            app:boxStrokeColor="#000"
+            app:startIconDrawable="@drawable/create"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="#000"
+            app:hintTextColor="#000"
+            app:passwordToggleEnabled="true"
+            app:startIconTint="#000"
+            android:background="@drawable/backg">
 
-            </LinearLayout>
-
-            <LinearLayout
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/lname"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                android:orientation="horizontal">
+                android:textColor="#000"
+                android:padding="10dp"/>
 
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Upload NID Back Page: "
-                    android:textColor="#000000" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <ImageView
-                    android:id="@+id/activity_registration_nid_back_page"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/nid_uploading_sign" />
 
-            </LinearLayout>
 
-            <Button
-                android:id="@+id/button"
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+
+            android:layout_marginTop="10dp"
+            android:hint="Enter Email(Optional)"
+            android:textColorHint="#000"
+            app:boxStrokeColor="#000"
+            app:startIconDrawable="@drawable/create"
+            app:boxStrokeWidthFocused="2dp"
+            app:endIconMode="clear_text"
+            app:endIconTint="#000"
+            app:hintTextColor="#000"
+            app:passwordToggleEnabled="true"
+            app:startIconTint="#000"
+            android:background="@drawable/backg">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginRight="10dp"
-                android:background="@color/white"
-                android:text="Next"
-                tools:ignore="TextContrastCheck" />
-        </LinearLayout>
+                android:layout_height="match_parent"
+                android:textColor="#000"
+                android:padding="10dp"/>
 
-    </ScrollView>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#000"
+            android:backgroundTint="@color/Blood"
+            android:text="Submit"
+            android:textColor="#fff"
+            android:transitionName="nextTra"></androidx.appcompat.widget.AppCompatButton>
+
+        <Button
+            android:id="@+id/Log_In"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+
+
+            android:text="Log In"
+            android:layout_gravity="center"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:textSize="14sp"></Button>
+
+    </LinearLayout>
+
+</ScrollView>

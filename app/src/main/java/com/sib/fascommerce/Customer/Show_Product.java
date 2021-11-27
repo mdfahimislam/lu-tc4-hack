@@ -107,7 +107,7 @@ public class Show_Product extends AppCompatActivity {
         ba=new BidAdapter(Show_Product.this,list1);
         bids.setAdapter(ba);
 
-        FirebaseDatabase.getInstance().getReference("AllProducts").child(pid).child("Bids").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsBids").child(pid).child("Bids").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.hasChildren())

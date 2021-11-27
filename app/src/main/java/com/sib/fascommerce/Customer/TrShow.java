@@ -58,7 +58,7 @@ public class TrShow extends AppCompatActivity {
         ad=new ProAdapter(TrShow.this,list1,"Sh");
         rere.setAdapter(ad);
         re.setText("Showing results for "+re1);
-        FirebaseDatabase.getInstance().getReference("AllProicines").addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProducts").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list1.clear();
@@ -81,8 +81,8 @@ public class TrShow extends AppCompatActivity {
 
             }
         });
-        ty[0]="Vitamins";
-        ty[1]="Penumonia";
+        ty[0]="Sports";
+        ty[1]="Accessories";
         re3=2;
         gr.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 

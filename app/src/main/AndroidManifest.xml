@@ -17,6 +17,9 @@
 
         android:theme="@style/Theme.FASCommerce">
         <activity
+            android:name=".Customer.UserSection"
+            android:exported="true" />
+        <activity
             android:name=".Seller.ProductListActivity"
             android:exported="true" >
 
@@ -50,6 +53,14 @@
         <activity
             android:name=".Admin.AdminHomePage"
             android:exported="false" />
+
+        <activity
+            android:name=".Authentication.Login"
+            android:exported="false" />
+        <activity
+        android:name=".Authentication.VerificationOTP"
+        android:exported="false" />
+
 
         <activity
             android:name=".Admin.AdminStatistic"
