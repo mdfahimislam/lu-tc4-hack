@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">FAS Commerce</string>
+    <string-array name="TypeM">
+        <item>Liquid</item>
+        <item>Tablets</item>
+        <item>Capsules</item>
+        <item>Topical medicines</item>
+        <item>Suppositories</item>
+        <item>Drops</item>
+        <item>Inhalers</item>
+        <item>Injections</item>
+        <item>Others</item>
+    </string-array>
+    <string-array name="What">
+        <item>Accessories</item>
+        <item>Education</item>
+        <item>Furnitures</item>
+        <item>Beauty Products</item>
+        <item>Clothes</item>
+        <item>Laptops</item>
+        <item>Mobiles</item>
+        <item>Sports</item>
+        <item>Vehicles</item>
+        <item>Property</item>
+        <item>Mental</item>
+        <item>Phycology</item>
+        <item>Others</item>
+    </string-array>
 </resources>
