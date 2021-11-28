@@ -111,38 +111,7 @@ public class User_Section1 extends AppCompatActivity {
                 break;
             email1 += email.charAt(i);
         }
-        scart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(!count.getText().toString().equals("0"))
-                {
-                    FirebaseDatabase.getInstance().getReference("Users").child(email1).child("CartAd").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if(snapshot.hasChildren()){
-                                String dis3=snapshot.child("dis").getValue(String.class);
-                                String dis4=snapshot.child("div").getValue(String.class);
-                                String dis5=snapshot.child("home").getValue(String.class);
-                                String dis6=snapshot.child("phone").getValue(String.class);
-                                // startActivity(new Intent(getApplicationContext(), Proceed.class).putExtra("Location",dis5+" ,"+dis3+" ,"+dis4).putExtra("Phone",dis6));
-                            }
-                            else
-                                startActivity(new Intent(getApplicationContext(),TakeAddress.class).putExtra("Work","No"));
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-
-                        }
-                    });
-
-                }
-                else
-                {
-                    Toast.makeText(getApplicationContext(),"Add elements to cart first!!",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
         String na[] = getResources().getStringArray(R.array.What);
         wo = (TextView) findViewById(R.id.wo);
         de = (TextView) findViewById(R.id.de);
@@ -172,23 +141,10 @@ public class User_Section1 extends AppCompatActivity {
         ta = new TipAdapter(User_Section1.this, img, na);
         tip.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         tip.setAdapter(ta);
-        FirebaseDatabase.getInstance().getReference("Users").child(email1).child("CartCount").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren())
-                    count.setText(snapshot.child("count").getValue(String.class));
-                else
-                    count.setText(0+"");
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
-        FirebaseDatabase.getInstance().getReference("Products").child(co.getText().toString()).addValueEventListener(new ValueEventListener() {
+
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(co.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -210,7 +166,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(wo.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(wo.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -233,7 +189,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(de.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(de.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -256,7 +212,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(ho.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(ho.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -279,7 +235,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(nu.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(nu.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -302,7 +258,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(vi.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(vi.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -325,7 +281,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(he.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(he.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -348,7 +304,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(ca.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(ca.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -371,7 +327,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(dia.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(dia.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -394,7 +350,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(pn.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(pn.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -417,7 +373,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(me.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(me.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
@@ -440,7 +396,7 @@ public class User_Section1 extends AppCompatActivity {
 
             }
         });
-        FirebaseDatabase.getInstance().getReference("Products").child(ot.getText().toString()).addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(ot.getText().toString()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {

@@ -6,10 +6,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 
-public class OnGoingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+import java.util.List;
 
+public class OnGoingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    List<ProductModel> li;
+
+    public OnGoingAdapter(List<ProductModel> li)
+    {
+        this.li=li;
+    }
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

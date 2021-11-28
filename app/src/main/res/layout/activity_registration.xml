@@ -32,86 +32,30 @@
             android:textStyle="bold"
             ></TextView>
 
-        <com.google.android.material.textfield.TextInputLayout
+     <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/fname"
+         android:drawableLeft="@drawable/create"
+         android:hint="Enter First Name"></EditText>
 
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Enter First Name"
-            android:textColorHint="#000"
-            app:boxStrokeColor="#000"
-            app:startIconDrawable="@drawable/create"
-            app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="#000"
-            app:hintTextColor="#000"
-            app:passwordToggleEnabled="true"
-            app:startIconTint="#000"
-            android:background="@drawable/backg">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/fname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:textColor="#000" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Enter Last Name"
-            android:textColorHint="#000"
-            app:boxStrokeColor="#000"
-
-            app:startIconDrawable="@drawable/create"
-            app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="#000"
-            app:hintTextColor="#000"
-            app:passwordToggleEnabled="true"
-            app:startIconTint="#000"
-            android:background="@drawable/backg">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/lname"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="#000"
-                android:padding="10dp"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
+            android:id="@+id/lname"
+            android:drawableLeft="@drawable/create"
+            android:hint="Enter Last Name"></EditText>
 
 
 
-        <com.google.android.material.textfield.TextInputLayout
+         <EditText
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/email"
+         android:drawableLeft="@drawable/create"
+         android:hint="Enter First Name"></EditText>
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:hint="Enter Email(Optional)"
-            android:textColorHint="#000"
-            app:boxStrokeColor="#000"
-            app:startIconDrawable="@drawable/create"
-            app:boxStrokeWidthFocused="2dp"
-            app:endIconMode="clear_text"
-            app:endIconTint="#000"
-            app:hintTextColor="#000"
-            app:passwordToggleEnabled="true"
-            app:startIconTint="#000"
-            android:background="@drawable/backg">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:textColor="#000"
-                android:padding="10dp"/>
-
-        </com.google.android.material.textfield.TextInputLayout>
 
 
         <androidx.appcompat.widget.AppCompatButton

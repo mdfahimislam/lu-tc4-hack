@@ -45,14 +45,9 @@ public class TrShow extends AppCompatActivity {
         re1=getIntent().getStringExtra("Re");
         SessionManager sh = new SessionManager(getApplicationContext(), SessionManager.USERSESSION);
         HashMap<String, String> hm = sh.returnData();
-        email = hm.get(SessionManager.EMAIL);
+       // email = hm.get(SessionManager.EMAIL);
         name = hm.get(SessionManager.FULLNAME);
-        email1 = "";
-        for (int i = 0; i < email.length(); i++) {
-            if (email.charAt(i) == '@')
-                break;
-            email1 += email.charAt(i);
-        }
+
 
         rere.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
         ad=new ProAdapter(TrShow.this,list1,"Sh");
@@ -91,7 +86,7 @@ public class TrShow extends AppCompatActivity {
         gr.setAdapter(agr);
         for(int i=0;i<re3;i++) {
 
-            FirebaseDatabase.getInstance().getReference("Proicines").child(ty[i]).addValueEventListener(new ValueEventListener() {
+            FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(ty[i]).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     for (DataSnapshot s : snapshot.getChildren()) {

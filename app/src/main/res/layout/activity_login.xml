@@ -40,7 +40,18 @@
             android:hint="Phone"
             android:inputType="phone"
             android:minHeight="48dp" />
-
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:drawableLeft="@drawable/create"
+            android:hint="Enter First Name"></EditText>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fname"
+            android:drawableLeft="@drawable/create"
+            android:hint="Enter First Name"></EditText>
 
         <Button
             android:id="@+id/login_activity_loginBtn"

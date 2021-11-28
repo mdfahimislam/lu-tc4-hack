@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.sib.fascommerce.DataModels.BidModel;
+import com.sib.fascommerce.DataModels.BidO;
 import com.sib.fascommerce.DataModels.ProductModel;
 import com.sib.fascommerce.R;
 
@@ -21,10 +22,10 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class BidAdapter extends RecyclerView.Adapter<BidAdapter.AllBids>{
-    List<BidModel> list;
+    List<BidO> list;
     Context c;
     String wo;
-    public  BidAdapter(Context c, List<BidModel> list){
+    public  BidAdapter(Context c, List<BidO> list){
         this.c=c;
         this.list=list;
 
@@ -40,7 +41,7 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.AllBids>{
     @Override
     public void onBindViewHolder(@NonNull BidAdapter.AllBids holder, int i) {
 
-        try{
+    /*  try{
             StorageReference storageReference= FirebaseStorage.getInstance().getReference(list.get(i).getUrl());
             //Glide.with(holder.itemView.getContext()).load(storageReference).into(imageView);
             storageReference.getDownloadUrl().addOnSuccessListener(uri -> {
@@ -56,9 +57,9 @@ public class BidAdapter extends RecyclerView.Adapter<BidAdapter.AllBids>{
             });}
         catch (Exception e){
 
-        }
-holder.points.setText(list.get(i).getPoint());
-holder.points.setText(list.get(i).getName());
+        }*/
+holder.points.setText(list.get(i).getPoints());
+holder.name.setText(list.get(i).getName());
     }
 
     @Override

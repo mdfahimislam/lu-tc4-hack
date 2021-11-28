@@ -25,7 +25,7 @@ public class SessionManager {
     public static final String POINTS = "POINTS";
     public static final String UID = "UID";
     public static final String WHAT = "WHAT";
-    public static final String BUY = "0";
+    public static final String BUY = "BUY";
 
 
 

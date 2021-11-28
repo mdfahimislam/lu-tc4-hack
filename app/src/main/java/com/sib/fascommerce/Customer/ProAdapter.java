@@ -6,12 +6,14 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -71,6 +73,7 @@ public class ProAdapter extends RecyclerView.Adapter<ProAdapter.MED> {
         catch (Exception e){
 
         }*/
+        try{
         holder.name.setText(list.get(i).getTitle());
         holder.price.setText(list.get(i).getBasePrice()+"Tk.");
         if(wo.equals("Ow")){
@@ -83,62 +86,24 @@ public class ProAdapter extends RecyclerView.Adapter<ProAdapter.MED> {
             }
         });*/
         SessionManager sh = new SessionManager(c, SessionManager.USERSESSION);
-        HashMap<String, String> hm = sh.returnData();
-        String email = hm.get(SessionManager.EMAIL);
-        String email1="";
-        for(int u=0;u<email.length();u++)
-        {
-            if(email.charAt(u)=='@')
-                break;
-            email1+=email.charAt(u);
-        }
-        String finalEmail = email1;
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ProgressDialog progressDialog;
-                AlertDialog.Builder builder;
-                builder = new AlertDialog.Builder(c);
 
-                builder = new AlertDialog.Builder(c);
-
-                builder.setMessage("Are you sure you want to delete??")
-                        .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                FirebaseDatabase.getInstance().getReference("MedicineOwners").child(finalEmail).child("Medicines").child(list.get(i).getCategory()).child(list.get(i).getId()).removeValue();
-                                FirebaseDatabase.getInstance().getReference("Medicines").child(list.get(i).getCategory()).child(list.get(i).getId()).removeValue();
-                                FirebaseDatabase.getInstance().getReference("AllMedicines").child(list.get(i).getId()).removeValue();
-                                FirebaseDatabase.getInstance().getReference("All").child(finalEmail).child(list.get(i).getId()).removeValue();
-
-                                list.remove(i);
-                                notifyDataSetChanged();
-                            }
-                        })
-                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //  Action for 'NO' Button
-                                dialog.cancel();
-                            }
-                        });
-                //Creating dialog box
-                AlertDialog alert = builder.create();
-                //Setting the title manually
-                alert.setTitle("Delete?");
-                alert.show();
-            }
-        });
         holder.buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!wo.equals("Ow")) {
-                    c.startActivity(new Intent(c, Show_Product.class).putExtra("Url", list.get(i).getUrl()
-                    ).putExtra("Name", list.get(i).getName()).putExtra("Mname", list.get(i).getTitle()).
-                            putExtra("Des", list.get(i).getDes()).
-                            putExtra("Dis", list.get(i).getCategory()).putExtra("Ran", list.get(i).getId()).putExtra("Price", list.get(i).getBasePrice()));
+                  //  Toast.makeText(c.getApplicationContext(), list.get(i).getId()+"Abid",Toast.LENGTH_LONG).show();
+                    c.startActivity(new Intent(c, Show_Product.class).putExtra("Id", list.get(i).getId()).putExtra("Uid",list.get(i).getName()));
                 }
             }
         });
+
+    }
+        catch(Exception e)
+        {
+            Log.d("TAG",e.getMessage());
+        }
+
+
 
     }
 

@@ -34,6 +34,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Random;
 
 public class AddNewActivity extends AppCompatActivity {
 private ActivityAddNewBinding binding;
@@ -69,7 +70,9 @@ private String[] options = {"automatic","manual"};
         phone=hm1.get(SessionManager.PHONE);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Fresco.initialize(getApplicationContext());
-        productID= FirebaseAuth.getInstance().getUid()+buy;
+        Random ne=new Random();
+        long by=ne.nextInt(1000000000);
+        productID= FirebaseAuth.getInstance().getUid()+by;
       /*  FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -184,11 +187,12 @@ private String[] options = {"automatic","manual"};
             ProductModel pd=new ProductModel(category,productID,productID,title,description,winOption,date,uid,email,fname,url,price);
             FirebaseDatabase.getInstance().getReference("AllProducts").child(productID).setValue(pd);
             FirebaseDatabase.getInstance().getReference("AllProductsCategory").child(category).child(productID).setValue(pd);
-            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child("Products").child(productID).setValue(pd);
+            FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Products").child(productID).setValue(pd);
             FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     buy=snapshot.getValue().toString();
+
                     int b=Integer.parseInt(buy);
                     b++;
 
@@ -201,6 +205,10 @@ private String[] options = {"automatic","manual"};
                     FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).updateChildren(mp);
                 }
 
-        }
-    }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }});
+}
+}
 }
