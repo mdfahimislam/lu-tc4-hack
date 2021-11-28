@@ -37,7 +37,7 @@ public class onGoingFragments extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_on_going_fragments, container, false);
         ArrayList<ProductModel> li=new ArrayList<>();
-      RecyclerView rt= view.findViewById(R.id.rt);
+       RecyclerView rt= view.findViewById(R.id.rt);
         OnGoingAdapter og=new OnGoingAdapter(li);
 
         SessionManager sh = new SessionManager(getContext(), SessionManager.USERSESSION);

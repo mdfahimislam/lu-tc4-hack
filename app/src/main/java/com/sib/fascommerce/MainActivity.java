@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
@@ -26,16 +27,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SessionManager sh = new SessionManager(MainActivity.this, SessionManager.USERSESSION);
-        hm1 = sh.returnData();
-        wh=hm1.get(SessionManager.WHAT);
 
-
-        textView = findViewById(R.id.testing);
-
-        textView.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
+            public void run() {
+
+                SessionManager sh = new SessionManager(MainActivity.this, SessionManager.USERSESSION);
+                hm1 = sh.returnData();
+                wh=hm1.get(SessionManager.WHAT);
+
                 if (wh != null) {
                     if (wh.contains("to")) {
                         startActivity(new Intent(MainActivity.this, User_Section1.class));
@@ -49,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     startActivity(new Intent(MainActivity.this, Login.class));
                 }
+                finish();
+
             }
-        });
+        },3000);
+
+
     }
 }
