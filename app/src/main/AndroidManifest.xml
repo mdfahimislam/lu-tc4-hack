@@ -47,12 +47,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".Seller.SellerHome"></activity>
+        <activity android:name=".Customer.TrShow"></activity>
+        <activity android:name=".Customer.ShowResults"></activity>
+        <activity android:name=".Customer.Bid"></activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
             android:name=".Seller.AddNewActivity"
             android:exported="false" />
+
         <activity
             android:name=".First.OtpActivity"
             android:exported="false" />

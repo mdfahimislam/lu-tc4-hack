@@ -37,7 +37,7 @@ public class OnGoingAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         TextView textView = holder.itemView.findViewById(R.id.itemTitle);
         TextView textView1=holder.itemView.findViewById(R.id.desEX);
         try{
-           FirebaseStorage.getInstance().getReference(models.get(position).getpUrl()+"0").getDownloadUrl().addOnSuccessListener(uri -> {
+           FirebaseStorage.getInstance().getReference(models.get(position).getpUrl()+"/"+models.get(position).getpUrl()+"0").getDownloadUrl().addOnSuccessListener(uri -> {
                try{
                    Glide.with(holder.itemView.getContext()).load(uri).into(imageView);
                }

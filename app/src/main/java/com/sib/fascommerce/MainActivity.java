@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.sib.fascommerce.Admin.AdminHomePage;
 import com.sib.fascommerce.Authentication.Login;
 import com.sib.fascommerce.Authentication.Registration;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 hm1 = sh.returnData();
                 wh=hm1.get(SessionManager.WHAT);
 
-                if (wh != null) {
+                if (wh != null && FirebaseAuth.getInstance().getCurrentUser()!=null) {
                     if (wh.contains("to")) {
                         startActivity(new Intent(MainActivity.this, User_Section1.class));
 
