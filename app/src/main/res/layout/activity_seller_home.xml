@@ -48,24 +48,30 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView"
-            app:srcCompat="@drawable/ic_baseline_notifications_active_24" />
+            app:srcCompat="@drawable/ic_baseline_notifications_active_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
+            android:minHeight="48dp"
             android:onClick="goToProducts"
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toStartOf="@+id/imageButton"
             app:layout_constraintTop_toTopOf="@+id/textView"
-            app:srcCompat="@drawable/cart" />
+            app:srcCompat="@drawable/cart"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
         tools:context=".covid_section.Statistics">
 
@@ -93,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="Serious"
+                    android:text="Pending"
                     android:textColor="#FFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -136,7 +142,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="Recovered"
+                    android:text="Today's order"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toTopOf="@+id/covid_statistic_totall_recovered"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -192,12 +198,12 @@
                     android:id="@+id/covid_statistic_totall_death"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="27841"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -209,9 +215,9 @@
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="8dp"
             app:cardCornerRadius="10dp"
-            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toStartOf="@+id/cardView"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -238,12 +244,12 @@
                     android:id="@+id/covid_statistic_totall_case"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="1568563"
                     android:textColor="#FFFFFF"
                     android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -271,9 +277,9 @@
                     android:id="@+id/textView15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Active"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Completed"
                     android:textColor="#FFFFFF"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -293,22 +299,6 @@
 
         </androidx.cardview.widget.CardView>
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/covid_statistic_chartlayout"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:layout_marginTop="40dp"-->
-<!--            android:background="@drawable/top20"-->
-<!--            android:backgroundTint="@color/white"-->
-<!--            android:paddingHorizontal="10dp"-->
-<!--            android:paddingTop="10dp"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/cardView3">-->
-
-<!--            -->
-<!--        </LinearLayout>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -188,19 +188,26 @@ private String[] options = {"automatic","manual"};
             FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).child("Buy").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    buy=snapshot.getValue().toString();
-                    int b=Integer.parseInt(buy);
+                    buy = snapshot.getValue().toString();
+                    int b = Integer.parseInt(buy);
                     b++;
 
-                    SessionManager shy=new SessionManager(AddNewActivity.this,SessionManager.USERSESSION);
-                    shy.loginSession(fname,email,phone,url,points,token,uid,wh,b+"");
-                    HashMap mp=new HashMap();
+                    SessionManager shy = new SessionManager(AddNewActivity.this, SessionManager.USERSESSION);
+                    shy.loginSession(fname, email, phone, url, points, token, uid, wh, b + "");
+                    HashMap mp = new HashMap();
 
-                    mp.put("Buy",b+"");
+                    mp.put("Buy", b + "");
 
                     FirebaseDatabase.getInstance().getReference("Users").child("Sellers").child(uid).updateChildren(mp);
                 }
 
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+
+
+            });
         }
     }
 }

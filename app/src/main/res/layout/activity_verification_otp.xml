@@ -43,15 +43,17 @@
             android:layout_marginTop="50dp"
             android:ems="10"
             android:hint="Enter Your OPT"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/verification_activity_Btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:onClick="ver"
             android:layout_marginTop="50dp"
+            android:background="@color/White"
+            android:onClick="ver"
             android:text="Verification" />
 
         <TextView
