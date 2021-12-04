@@ -108,7 +108,7 @@ As from 2019 lockdowns became the new normal, businesses and consumers increasin
 	- [ ] Premium User VS Freemium User (customer can open a free account or can upgrade their account to have extra benefits) **[Nice to have | 15 points]**
 		- [ ] Normal users can only bid whereas premium users can see the percentage of winning a bid
 
-## :Our Solution
+## Our Solution
 
 ![image](https://user-images.githubusercontent.com/86300358/144703314-472a4dc7-fb36-4814-948d-45d4a813c740.png)
 
